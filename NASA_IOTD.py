@@ -36,10 +36,12 @@ if response.info().get('Content-Encoding') == 'gzip':
 else:
     data = response
     
-s = BeautifulSoup(data)
+s = BeautifulSoup(data,'html.parser')
+# add html.parser to remove warning
 
 for item in s.find_all('item'):
-    image_url = item.enclosure['url']
+    image_url = item.enclosure['url'].replace("http","https")
+    # add replace to keep link safe and success
 
     #file_name = image_url.split('/')[-1]
     file_name = (item.title.get_text() + '.' + image_url.split('.')[-1])
