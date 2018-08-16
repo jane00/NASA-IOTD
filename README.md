@@ -26,3 +26,7 @@ Most of the code has been copied from
 License
 -------
 CC0 http://creativecommons.org/publicdomain/zero/1.0/
+
+
+Modify on 2018/08/16 by lia
+add some code to remove warning and exception
